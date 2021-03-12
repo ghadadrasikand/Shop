@@ -1,0 +1,31 @@
+﻿@model Shop.Host.DTOs.Products.GridResultDTO
+@{
+    ViewData["Title"] = "ProductList";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ProductList</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">تصویر محصول</th>
+            <th scope="col">نام محصول</th>
+            <th scope="col">قیمت</th>
+            <th scope="col">تعداد</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Product)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td><img src="@item.ImagePath" width="100px" height="100px"/></td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
